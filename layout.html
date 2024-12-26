@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table- HTML </title>
+    
+        <style>
+/* Attractive CSS Style for Table */
+
+
+/* CSS Style for the Table */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #6c7ae0;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+thead th {
+  padding: 15px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+th, td {
+  border: 1px solid #ddd;
+}
+</style>
+   
+</head>
+
+<body>
+    <h1>Tables in HTML</h1>
+    <table>
+        <!-- head of the table -->
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+
+            </tr>
+
+        </thead>
+        <!-- body of the table -->
+        <tbody>
+            <tr>
+                <td>Aditya</td>
+                <td>Software developer</td>
+                <td>$7000</td>
+
+            </tr>
+            <tr>
+                <td>Sagar</td>
+                <td>Software engineer</td>
+                <td>$7600</td>
+            </tr>
+            <tr>
+                <td>Aayush</td>
+                <td>Worker</td>
+                <td>$4000</td>
+            </tr>
+            <tr>
+                <td>Harshit</td>
+                <td>Majdoor</td>
+                <td>$3400</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

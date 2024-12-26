@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Job Interviewing System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6c7ae0;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #6c7ae0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #575fcf;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Automated Job Interviewing System</h1>
+    </header>
+
+    <div class="container">
+        <div id="question-area">
+            <div class="question">1. What is your greatest strength?</div>
+            <div class="answer">
+                <input type="text" id="answer" placeholder="Type your answer here...">
+            </div>
+            <button onclick="submitAnswer()">Submit Answer</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            "What is your greatest strength?",
+            "How do you handle stress and pressure?",
+            "Why should we hire you?",
+            "Where do you see yourself in 5 years?"
+        ];
+
+        let currentQuestion = 0;
+        let responses = [];
+
+        function submitAnswer() {
+            const answerField = document.getElementById("answer");
+            const resultDiv = document.getElementById("result");
+            const questionArea = document.getElementById("question-area");
+
+            // Store the answer
+            responses.push(answerField.value);
+
+            // Clear the input field
+            answerField.value = "";
+
+            // Check if there are more questions
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                // Display the next question
+                questionArea.querySelector(".question").innerText = `${currentQuestion + 1}. ${questions[currentQuestion]}`;
+            } else {
+                // End of questions
+                questionArea.style.display = "none";
+                resultDiv.innerHTML = `<p>Thank you for completing the interview. Your responses:</p><ul>${responses.map(
+                    (res, idx) => `<li><strong>Q${idx + 1}:</strong> ${res}</li>`
+                ).join("")}</ul>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
